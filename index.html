@@ -22,19 +22,22 @@
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#bagis">Bağış Bilgileri</a>
         <a href="#iletisim">İletişim</a>
+        <a href="#" onclick="openPage('kategoriler')">Can Dostlarımız</a>
     </nav>
 </header>
 
-<main class="content">
+<!-- ============================= -->
+<!-- ANA SAYFA -->
+<!-- ============================= -->
 
-    <!-- HAKKIMIZDA -->
+<main class="content" id="anasayfa">
+
     <h2 id="hakkimizda">Hakkımızda</h2>
     <p>
-        Ankara başta olmak üzere yüzlerce canın kısırlaştırma, tedavi ve sahiplendirme süreçlerine destek olduk.
-        Ocak 2023’te Diren Tekir Derneği’ni kurduk.
+        Yaşadığımız kent Ankara başta olmak üzere yüzlerce canın kısırlaştırma,
+        tedavi ve sahiplendirme süreçlerine destek olduk.
     </p>
 
-    <!-- BAĞIŞ -->
     <h2 id="bagis">Bağış Bilgileri</h2>
     <p><strong>IBAN:</strong> TR400006400000142171823807</p>
 
@@ -44,107 +47,62 @@
         </button>
     </div>
 
-    <!-- İLETİŞİM -->
     <h2 id="iletisim">İletişim</h2>
 
     <div class="contact-card">
         <a href="mailto:direntekir@gmail.com" class="contact-item">
-            <span class="text">direntekir@gmail.com</span>
+            direntekir@gmail.com
         </a>
-
+        <br>
         <a href="https://instagram.com/direntekir" target="_blank" class="contact-item">
-            <span class="text">@direntekir</span>
+            @direntekir
         </a>
     </div>
 
-    <!-- ===================== -->
-    <!-- KATEGORİ SİSTEMİ -->
-    <!-- ===================== -->
+</main>
+
+<!-- ============================= -->
+<!-- KATEGORİ SAYFASI -->
+<!-- ============================= -->
+
+<div id="kategoriler" class="page">
 
     <div class="layout">
 
         <aside class="sidebar">
             <button onclick="showSection('himaye')">Himayemizdeki Canlar</button>
             <button onclick="showSection('yuva')">Yuva Arayan Canlar</button>
-            <button onclick="showSection('kaybettiklerimiz')">Kaybettiklerimiz</button>
+            <button onclick="showSection('kayip')">Kaybettiklerimiz</button>
             <button onclick="showSection('etkinlikler')">Etkinlikler</button>
             <button onclick="showSection('blog')">Tekir'in Bloğu</button>
+            <button onclick="openPage('anasayfa')">← Ana Sayfa</button>
         </aside>
 
         <section class="dynamic-content">
 
-            <!-- Himayemizde -->
-            <div id="himaye" class="section hidden">
+            <div id="himaye" class="section">
                 <h2>Himayemizdeki Canlar</h2>
-
-                <div class="animal-grid">
-                    <div class="animal-card">
-                        <div class="slider">
-                            <img src="images/kedi1.jpg">
-                            <img src="images/kedi1_2.jpg">
-                        </div>
-                        <h3>MİNNOŞ</h3>
-                        <p>3 yaşında • kısır • sakin</p>
-                    </div>
-                </div>
             </div>
 
-            <!-- Yuva Arayan -->
-            <div id="yuva" class="section hidden">
+            <div id="yuva" class="section">
                 <h2>Yuva Arayan Canlar</h2>
-                <div class="animal-grid"></div>
             </div>
 
-            <!-- Kaybettiklerimiz -->
-            <div id="kaybettiklerimiz" class="section hidden">
+            <div id="kayip" class="section">
                 <h2>Kaybettiklerimiz ama Unutmadıklarımız</h2>
-                <div class="animal-grid"></div>
             </div>
 
-            <!-- Etkinlikler -->
-            <div id="etkinlikler" class="section hidden">
+            <div id="etkinlikler" class="section">
                 <h2>Etkinlikler</h2>
-
-                <div class="event-menu">
-                    <button onclick="showEvent('etkinlik1')">Mama Bağışı Kampanyası</button>
-                    <button onclick="showEvent('etkinlik2')">Kısırlaştırma Günü</button>
-                </div>
-
-                <div id="etkinlik1" class="event hidden">
-                    <img src="images/event1.jpg">
-                    <p>Etkinlik detayları burada yer alacak.</p>
-                </div>
-
-                <div id="etkinlik2" class="event hidden">
-                    <img src="images/event2.jpg">
-                    <p>Etkinlik detayları burada yer alacak.</p>
-                </div>
             </div>
 
-            <!-- BLOG -->
-            <div id="blog" class="section hidden">
+            <div id="blog" class="section">
                 <h2>Tekir'in Bloğu</h2>
-
-                <div class="blog-menu">
-                    <button onclick="showPost('post1')">Ocak Kurtarma Hikayeleri</button>
-                    <button onclick="showPost('post2')">Kış ve Sokak Hayvanları</button>
-                </div>
-
-                <div id="post1" class="post hidden">
-                    <img src="images/blog1.jpg">
-                    <p>Blog yazısı burada yer alacak.</p>
-                </div>
-
-                <div id="post2" class="post hidden">
-                    <img src="images/blog2.jpg">
-                    <p>Blog yazısı burada yer alacak.</p>
-                </div>
             </div>
 
         </section>
     </div>
-
-</main>
+</div>
 
 <script>
 function copyText(text) {
@@ -153,20 +111,20 @@ function copyText(text) {
     });
 }
 
+function openPage(pageId) {
+    document.getElementById("anasayfa").style.display = "none";
+    document.getElementById("kategoriler").style.display = "none";
+
+    document.getElementById(pageId).style.display = "block";
+}
+
 function showSection(id) {
-    document.querySelectorAll(".section").forEach(s => s.classList.add("hidden"));
-    document.getElementById(id).classList.remove("hidden");
+    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
+    document.getElementById(id).style.display = "block";
 }
 
-function showEvent(id) {
-    document.querySelectorAll(".event").forEach(e => e.classList.add("hidden"));
-    document.getElementById(id).classList.remove("hidden");
-}
-
-function showPost(id) {
-    document.querySelectorAll(".post").forEach(p => p.classList.add("hidden"));
-    document.getElementById(id).classList.remove("hidden");
-}
+// Site açıldığında kategori sayfası gizli olsun
+document.getElementById("kategoriler").style.display = "none";
 </script>
 
 </body>
