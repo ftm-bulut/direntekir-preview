@@ -1,189 +1,393 @@
 
-<!DOCTYPE html>
-<html lang="tr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diren Tekir</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <header class="header">
-        <img src="images/logo.png" class="logo" alt="Dernek Logosu">
-
-        <h1 class="title">
-            <span class="title-top">Diren Tekir</span>
-            <span class="title-bottom">Doğa ve Hayvanları Koruma Derneği</span>
-        </h1>
-
-        <!-- Sağ alt menü -->
-        <nav class="header-nav">
-            <a href="#hakkimizda">Hakkımızda</a>
-            <a href="#bagis">Bağış Bilgileri</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
-    </header>
-
-    <main class="content">
-
-        <h2 id="hakkimizda">Hakkımızda</h2>
-        <p>
-            Yaşadığımız kent Ankara başta olmak üzere bugüne kadar birçok kentte yüzlerce kedi ve köpeğin
-            kısırlaştırılma, tedavi ve sahiplendirme süreçlerine destek olduk. Sokak hayvanları mahalle sakinidir diye
-            çıktığımız yaklaşık 7 yıllık bir yolculuğun ardından daha aktif çalışabilmek için Diren Tekir Doğa ve
-            Hayvanları Koruma Derneği’ni Ocak 2023 yılında resmi olarak kurduk. Sokakta yaşayan hayvanların temel
-            ihtiyaçları yani kısırlaştırma, tedavi, besleme ve sahiplendirme konularında sahada oldukça aktif
-            çalışmamızın yanı sıra barınak ve kurum ziyaretleri, hayvanlara karşı işlenen suçlarda hukuki süreç takibi
-            alanlarında da aktif olarak mücadele ediyoruz.
-            <br>
-            <br>
-            Sadece sokakta yaşayan hayvanlar için değil, tüm türler için eşit, adil ve özgür bir dünya tahayyülüyle
-            yunuslar için esaret parklarından hayvanat bahçesi hapishanelerine, ekolojik katliamlara, deneyde kullanılan
-            hayvanlara kadar tüm kafesler kırılana dek mücadele etme vizyonu ve misyonuyla çalışmalarımızı yürütüyoruz.
-            <br>
-            <br>
-            “yaşadım diyebilmen için…”
-        </p>
-
-        <h2 id="bagis">Bağış Bilgileri</h2>
-
-        <!-- ALT BAŞLIK 1 -->
-        <h3 class="sub-title">Havale / EFT</h3>
-        <p>
-            <strong>HESAP BİLGİLERİ:</strong>
-            <br>
-            <strong>İsim:</strong> DİREN TEKİR DOĞA VE HAYVANLARI KORUMA DERNEĞİ
-            <br>
-            <strong>Banka:</strong> İş Bankası
-            <br>
-            <strong>IBAN:</strong> TR400006400000142171823807
-            <br>
-            <strong>Açıklama:</strong> Bağış
-            <br>
-            *Lütfen açıklamaya bağış harici bir şey yazmayınız.
-        </p>
-
-        <!-- Kopyalama Butonları -->
-        <div class="copy-buttons">
-            <button class="copy-btn" onclick="copyText('DİREN TEKİR DOĞA VE HAYVANLARI KORUMA DERNEĞİ')">📋 İsim
-                Kopyala</button>
-            <button class="copy-btn" onclick="copyText('TR400006400000142171823807')">💳 IBAN Kopyala</button>
-        </div>
-
-
-        <!-- ALT BAŞLIK 2 -->
-        <h3 class="sub-title">Banka/Kredi Kartı ile Destek Bilgileri</h3>
-
-        <p>
-            Aşağıdaki link üzerinden destek olmak istediğiniz miktarı seçerek, Iyzico aracı ödeme sitesi desteği ile
-            banka kartı ve kredi kartlarınızla güvenle destek olabilirsiniz. Adres, iletişim gibi bilgileri eksik veya
-            yanlış doldurmanızda bir sakınca yoktur, yalnızca Iyzico bir alışveriş sitesi gibi çalıştığından
-            gerekmektedir.
-        </p>
-
-        <!-- Bağış Yap Butonu -->
-        <a href="https://linktr.ee/direntekir" target="_blank" class="donate-btn">
-            ❤️ Banka/Kredi Kartı ile Bağış Linkleri
-        </a>
-
-
-
-        <h2 id="iletisim">İletişim</h2>
-
-        <div class="contact-card">
-
-            <!-- Email -->
-            <div class="contact-label">E-mail</div>
-            <a href="mailto:direntekir@gmail.com" class="contact-item">
-
-                <!-- Gmail Orijinal SVG -->
-                <span class="icon">
-                    <img src="https://www.svgrepo.com/show/303161/gmail-icon-logo.svg" alt="gmail icon">
-                </span>
-
-                <span class="text">direntekir@gmail.com</span>
-            </a>
-
-            <!-- Instagram -->
-            <div class="contact-label">Instagram</div>
-            <a href="https://www.instagram.com/direntekir" target="_blank" class="contact-item">
-
-                <!-- Instagram Orijinal SVG -->
-                <span class="icon">
-                    <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="instagram icon">
-                </span>
-
-                <span class="text">@direntekir</span>
-            </a>
-
-        </div>
-
-
-
-
-    </main>
-<!-- SOL MENÜ -->
-<div class="side-menu">
-    <button onclick="openPage('himaye')">Himayemizdeki Canlar</button>
-    <button onclick="openPage('yuva')">Yuva Arayan Canlar</button>
-    <button onclick="openPage('kayip')">Kaybettiklerimiz</button>
-    <button onclick="openPage('etkinlik')">Etkinlikler</button>
-    <button onclick="openPage('blog')">Tekir'in Bloğu</button>
-</div>
-
-<!-- OVERLAY SAYFA -->
-<div id="overlayPage" class="overlay hidden">
-
-    <button class="close-overlay" onclick="closePage()">✕</button>
-
-    <div id="himaye" class="overlay-section hidden">
-        <h2>Himayemizdeki Canlar</h2>
-    </div>
-
-    <div id="yuva" class="overlay-section hidden">
-        <h2>Yuva Arayan Canlar</h2>
-    </div>
-
-    <div id="kayip" class="overlay-section hidden">
-        <h2>Kaybettiklerimiz ama Unutmadıklarımız</h2>
-    </div>
-
-    <div id="etkinlik" class="overlay-section hidden">
-        <h2>Etkinlikler</h2>
-    </div>
-
-    <div id="blog" class="overlay-section hidden">
-        <h2>Tekir'in Bloğu</h2>
-    </div>
-
-</div>
-
-    <script>
-function copyText(text) {
-    navigator.clipboard.writeText(text).then(function () {
-        alert("Kopyalandı: " + text);
-    });
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
 }
 
-function openPage(id) {
-    document.getElementById("overlayPage").classList.remove("hidden");
-
-    document.querySelectorAll(".overlay-section")
-        .forEach(sec => sec.classList.add("hidden"));
-
-    document.getElementById(id).classList.remove("hidden");
+/* Genel arka plan rengi */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f3e8;
+    position: relative;
+    overflow-x: hidden;
 }
 
-function closePage() {
-    document.getElementById("overlayPage").classList.add("hidden");
+/* Arka planda soluk logo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background-image: url("images/logo_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.07;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
-</script>
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    /* satır aralığı – yazıyı çok daha okunabilir yapar */
+}
+
+/* Header düzeni */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    position: relative;
+
+    background: linear-gradient(to bottom,
+            #9FAF72 0%,
+            rgba(159, 175, 114, 0.95) 70%,
+            rgba(159, 175, 114, 0) 100%);
+    color: #ffffff;
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Başlık */
+.title {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    line-height: 1.1;
+}
+
+/* Üst satır */
+.title-top {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Alt satır */
+.title-bottom {
+    font-size: 20px;
+    font-weight: 400;
+}
 
 
-</body>
+/* HEADER MENÜ – Modern pastel buton stilinde */
+.header-nav {
+    position: absolute;
+    bottom: 8px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+}
+
+.header-nav a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background-color: #f0f3e2;
+    /* pastel açık yeşil */
+    color: #4c5831;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-nav a:hover {
+    background-color: #e4eacb;
+    border-color: #b7c29a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.header-nav a:active {
+    transform: scale(0.97);
+}
 
 
-</html>
+.header-nav a:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* İçerik */
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.copy-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.copy-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background-color: white;
+    /* pastel yeşil tonları */
+    color: #4c5831;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.copy-btn:hover {
+    background-color: #e4eacb;
+    border-color: #b7c29a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.copy-btn:active {
+    transform: scale(0.97);
+}
+
+/* Bağış alt başlıkları */
+.sub-title {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    color: #4c5831;
+}
+
+/* Bağış Yap butonu */
+.donate-btn {
+    display: inline-block;
+    margin-top: 2px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid #cfd8b4;
+    color: #4c5831;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.donate-btn:hover {
+    background-color: #e4eacb;
+    border-color: #b7c29a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.donate-btn:active {
+    transform: scale(0.97);
+}
+
+/* Alt başlıklar için indent */
+.sub-title {
+    margin-left: 25px;
+    /* indent miktarı */
+}
+
+/* Alt başlık altındaki paragraflar */
+.sub-title+p {
+    margin-left: 35px;
+    /* içerik biraz daha içeride olabilir */
+}
+
+/* Kopyalama butonları da içeride olsun */
+.copy-buttons {
+    margin-left: 35px;
+}
+
+/* Bağış Yap butonu da içeride */
+.donate-btn {
+    margin-left: 35px;
+}
+
+/* İletişim kartı (arka planı kaldırılmış sade görünüm) */
+.contact-card {
+    background-color: transparent;
+    /* yeşil zemin kaldırıldı */
+    border: none;
+    /* kenarlık kaldırıldı */
+    padding: 0;
+    /* içerik doğrudan sayfaya oturacak */
+    margin-top: 20px;
+}
+
+/* Tek tek satırlar */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    /* Genişlik ayarı */
+    max-width: 200px;
+    /* Gmail uzunluğu için ideal */
+    width: 100%;
+    /* küçülen ekranlarda uyumlu */
+
+    background-color: white;
+    border-radius: 10px;
+    text-decoration: none;
+
+    user-select: text;
+
+    color: #4c5831;
+    font-size: 16px;
+    font-weight: 500;
+
+    border: 1px solid #e1e6cf;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 12px;
+    /* kutular arası boşluk */
+}
+
+
+
+/* Hover efekti */
+.contact-item:hover {
+    background-color: #e9efd8;
+    border-color: #c5ceab;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* İkonlar */
+.contact-item .icon {
+    font-size: 20px;
+}
+
+/* Instagram & Mail yazıları */
+.contact-item .text {
+    font-size: 15px;
+}
+
+/* Küçük açıklama başlıkları */
+.contact-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4c5831;
+    margin-top: 10px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    opacity: 0.8;
+}
+
+/* SVG ikon boyutu */
+.contact-item img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Mevcut contact-item stili ikonlarla uyumlu çalışır */
+
+/* Mobil görünüm düzeltmesi */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 40px;
+        /* butonlara yer açılsın */
+    }
+
+    .title {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .header-nav {
+        position: static;
+        /* absolute kaldırıldı */
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .header-nav a {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+
+    .logo {
+        width: 70px;
+        /* mobilde daha iyi orantı */
+    }
+}
+
+/* Ana başlıklar (Hakkımızda, Bağış, İletişim) */
+h2 {
+    color: #3f2f1b;
+}
+/* SOL MENÜ */
+.side-menu {
+    position: fixed;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+}
+
+.side-menu button {
+    background: #9FAF72;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 0 8px 8px 0;
+}
+
+/* overlay sayfa */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f7f3e8;
+    padding: 40px;
+    overflow-y: auto;
+    z-index: 998;
+}
+
+.hidden {
+    display: none;
+}
+
+.close-overlay {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
