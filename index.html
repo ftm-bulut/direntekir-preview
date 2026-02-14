@@ -10,122 +10,151 @@
 
 <body>
 
-<header class="header">
-    <img src="images/logo.png" class="logo" alt="Dernek Logosu">
+    <header class="header">
+        <img src="images/logo.png" class="logo" alt="Dernek Logosu">
 
-    <h1 class="title">
-        <span class="title-top">Diren Tekir</span>
-        <span class="title-bottom">Doğa ve Hayvanları Koruma Derneği</span>
-    </h1>
+        <h1 class="title">
+            <span class="title-top">Diren Tekir</span>
+            <span class="title-bottom">Doğa ve Hayvanları Koruma Derneği</span>
+        </h1>
 
-    <nav class="header-nav">
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#bagis">Bağış Bilgileri</a>
-        <a href="#iletisim">İletişim</a>
-        <a href="#" onclick="openPage('kategoriler')">Can Dostlarımız</a>
-    </nav>
-</header>
+        <nav class="header-nav">
+            <a href="#hakkimizda">Hakkımızda</a>
+            <a href="#bagis">Bağış Bilgileri</a>
+            <a href="#iletisim">İletişim</a>
+        </nav>
+    </header>
 
-<!-- ============================= -->
-<!-- ANA SAYFA -->
-<!-- ============================= -->
+    <main class="content">
 
-<main class="content" id="anasayfa">
+        <h2 id="hakkimizda">Hakkımızda</h2>
+        <p>
+            Yaşadığımız kent Ankara başta olmak üzere bugüne kadar birçok kentte yüzlerce kedi ve köpeğin
+            kısırlaştırılma, tedavi ve sahiplendirme süreçlerine destek olduk...
+        </p>
 
-    <h2 id="hakkimizda">Hakkımızda</h2>
-    <p>
-        Yaşadığımız kent Ankara başta olmak üzere yüzlerce canın kısırlaştırma,
-        tedavi ve sahiplendirme süreçlerine destek olduk.
-    </p>
+        <h2 id="bagis">Bağış Bilgileri</h2>
 
-    <h2 id="bagis">Bağış Bilgileri</h2>
-    <p><strong>IBAN:</strong> TR400006400000142171823807</p>
+        <h3 class="sub-title">Havale / EFT</h3>
+        <p>
+            <strong>İsim:</strong> DİREN TEKİR DOĞA VE HAYVANLARI KORUMA DERNEĞİ<br>
+            <strong>Banka:</strong> İş Bankası<br>
+            <strong>IBAN:</strong> TR400006400000142171823807
+        </p>
 
-    <div class="copy-buttons">
-        <button class="copy-btn" onclick="copyText('TR400006400000142171823807')">
-            IBAN Kopyala
-        </button>
+        <div class="copy-buttons">
+            <button class="copy-btn" onclick="copyText('DİREN TEKİR DOĞA VE HAYVANLARI KORUMA DERNEĞİ')">📋 İsim Kopyala</button>
+            <button class="copy-btn" onclick="copyText('TR400006400000142171823807')">💳 IBAN Kopyala</button>
+        </div>
+
+        <h2 id="iletisim">İletişim</h2>
+
+        <div class="contact-card">
+            <div class="contact-label">E-mail</div>
+            <a href="mailto:direntekir@gmail.com" class="contact-item">
+                <span class="text">direntekir@gmail.com</span>
+            </a>
+
+            <div class="contact-label">Instagram</div>
+            <a href="https://www.instagram.com/direntekir" target="_blank" class="contact-item">
+                <span class="text">@direntekir</span>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- SOL MENÜ -->
+    <div class="side-menu">
+        <button onclick="openPage('himaye')">Himayemizdeki Canlar</button>
+        <button onclick="openPage('yuva')">Yuva Arayan Canlar</button>
+        <button onclick="openPage('kayip')">Kaybettiklerimiz</button>
+        <button onclick="openPage('etkinlik')">Etkinlikler</button>
+        <button onclick="openPage('blog')">Tekir'in Bloğu</button>
     </div>
 
-    <h2 id="iletisim">İletişim</h2>
+    <!-- OVERLAY SAYFALAR -->
+    <div id="pageOverlay" class="page-overlay hidden">
 
-    <div class="contact-card">
-        <a href="mailto:direntekir@gmail.com" class="contact-item">
-            direntekir@gmail.com
-        </a>
-        <br>
-        <a href="https://instagram.com/direntekir" target="_blank" class="contact-item">
-            @direntekir
-        </a>
+        <button class="close-btn" onclick="closePage()">✕</button>
+
+        <div id="himaye" class="page hidden">
+            <h2>Himayemizdeki Canlar</h2>
+            <div class="animal-grid">
+                <div class="animal-card">
+                    <img src="images/cat1.jpg">
+                    <h3>Tekir</h3>
+                    <p>4 yaşında • Kısır • Aşılı</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="yuva" class="page hidden">
+            <h2>Yuva Arayan Canlar</h2>
+            <div class="animal-grid">
+                <div class="animal-card">
+                    <img src="images/cat2.jpg">
+                    <h3>Miskin</h3>
+                    <p>2 yaşında • Oyuncu</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="kayip" class="page hidden">
+            <h2>Kaybettiklerimiz ama Unutmadıklarımız</h2>
+            <div class="animal-grid">
+                <div class="animal-card">
+                    <img src="images/cat3.jpg">
+                    <h3>Boncuk</h3>
+                    <p>Kalbimizde yaşayacak ❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="etkinlik" class="page hidden">
+            <h2>Etkinlikler</h2>
+            <button class="sub-btn" onclick="showEvent('et1')">Mama Dağıtımı</button>
+            <div id="et1" class="event hidden">
+                <img src="images/event1.jpg" class="event-img">
+                <p>Mahalle besleme etkinliği gerçekleştirildi.</p>
+            </div>
+        </div>
+
+        <div id="blog" class="page hidden">
+            <h2>Tekir'in Bloğu</h2>
+            <button class="sub-btn" onclick="showPost('post1')">Kışın Sokak Hayvanları</button>
+            <div id="post1" class="post hidden">
+                <img src="images/blog1.jpg" class="event-img">
+                <p>Kış aylarında hayvanlara destek olmak hayati önem taşır.</p>
+            </div>
+        </div>
+
     </div>
 
-</main>
+    <script>
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => alert("Kopyalandı"));
+        }
 
-<!-- ============================= -->
-<!-- KATEGORİ SAYFASI -->
-<!-- ============================= -->
+        function openPage(id) {
+            document.getElementById("pageOverlay").classList.remove("hidden");
+            document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+            document.getElementById(id).classList.remove("hidden");
+        }
 
-<div id="kategoriler" class="page">
+        function closePage() {
+            document.getElementById("pageOverlay").classList.add("hidden");
+        }
 
-    <div class="layout">
+        function showEvent(id) {
+            document.querySelectorAll(".event").forEach(e => e.classList.add("hidden"));
+            document.getElementById(id).classList.remove("hidden");
+        }
 
-        <aside class="sidebar">
-            <button onclick="showSection('himaye')">Himayemizdeki Canlar</button>
-            <button onclick="showSection('yuva')">Yuva Arayan Canlar</button>
-            <button onclick="showSection('kayip')">Kaybettiklerimiz</button>
-            <button onclick="showSection('etkinlikler')">Etkinlikler</button>
-            <button onclick="showSection('blog')">Tekir'in Bloğu</button>
-            <button onclick="openPage('anasayfa')">← Ana Sayfa</button>
-        </aside>
-
-        <section class="dynamic-content">
-
-            <div id="himaye" class="section">
-                <h2>Himayemizdeki Canlar</h2>
-            </div>
-
-            <div id="yuva" class="section">
-                <h2>Yuva Arayan Canlar</h2>
-            </div>
-
-            <div id="kayip" class="section">
-                <h2>Kaybettiklerimiz ama Unutmadıklarımız</h2>
-            </div>
-
-            <div id="etkinlikler" class="section">
-                <h2>Etkinlikler</h2>
-            </div>
-
-            <div id="blog" class="section">
-                <h2>Tekir'in Bloğu</h2>
-            </div>
-
-        </section>
-    </div>
-</div>
-
-<script>
-function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-        alert("Kopyalandı: " + text);
-    });
-}
-
-function openPage(pageId) {
-    document.getElementById("anasayfa").style.display = "none";
-    document.getElementById("kategoriler").style.display = "none";
-
-    document.getElementById(pageId).style.display = "block";
-}
-
-function showSection(id) {
-    document.querySelectorAll(".section").forEach(sec => sec.style.display = "none");
-    document.getElementById(id).style.display = "block";
-}
-
-// Site açıldığında kategori sayfası gizli olsun
-document.getElementById("kategoriler").style.display = "none";
-</script>
+        function showPost(id) {
+            document.querySelectorAll(".post").forEach(p => p.classList.add("hidden"));
+            document.getElementById(id).classList.remove("hidden");
+        }
+    </script>
 
 </body>
 </html>
