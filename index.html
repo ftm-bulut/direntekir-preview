@@ -1,84 +1,173 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
-    <title>Diren Tekir</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diren Tekir</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
-    <div class="header-left">
-        <img src="images/logo.png" class="logo">
-        <div class="title">
-            <span class="title-top">Diren Tekir</span>
-            <span class="title-bottom">Doğa ve Hayvanları Koruma Derneği</span>
-        </div>
-    </div>
+    <img src="images/logo.png" class="logo" alt="Dernek Logosu">
 
-    <nav class="nav">
-        <a href="#">Hakkımızda</a>
-        <a href="#">Ekibimiz</a>
-        <a href="#">Etkinlikler</a>
-        <a href="#">Yuva Arayanlar</a>
-        <a href="#">İletişim</a>
+    <h1 class="title">
+        <span class="title-top">Diren Tekir</span>
+        <span class="title-bottom">Doğa ve Hayvanları Koruma Derneği</span>
+    </h1>
+
+    <nav class="header-nav">
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#bagis">Bağış Bilgileri</a>
+        <a href="#iletisim">İletişim</a>
     </nav>
 </header>
 
 <main class="content">
 
-<h2>Hakkımızda</h2>
-<p>Buraya mevcut hakkımızda metnin aynısı gelecek.</p>
+    <!-- HAKKIMIZDA -->
+    <h2 id="hakkimizda">Hakkımızda</h2>
+    <p>
+        Ankara başta olmak üzere yüzlerce canın kısırlaştırma, tedavi ve sahiplendirme süreçlerine destek olduk.
+        Ocak 2023’te Diren Tekir Derneği’ni kurduk.
+    </p>
 
-<h2>Ekibimiz</h2>
-<div class="team-grid">
+    <!-- BAĞIŞ -->
+    <h2 id="bagis">Bağış Bilgileri</h2>
+    <p><strong>IBAN:</strong> TR400006400000142171823807</p>
 
-    <div class="card">
-        <img src="images/team/ekip1.jpg">
-        <p><strong>İsim</strong><br>Kısa tanıtım</p>
+    <div class="copy-buttons">
+        <button class="copy-btn" onclick="copyText('TR400006400000142171823807')">
+            IBAN Kopyala
+        </button>
     </div>
 
-    <div class="card">
-        <img src="images/team/ekip2.jpg">
-        <p><strong>İsim</strong><br>Kısa tanıtım</p>
+    <!-- İLETİŞİM -->
+    <h2 id="iletisim">İletişim</h2>
+
+    <div class="contact-card">
+        <a href="mailto:direntekir@gmail.com" class="contact-item">
+            <span class="text">direntekir@gmail.com</span>
+        </a>
+
+        <a href="https://instagram.com/direntekir" target="_blank" class="contact-item">
+            <span class="text">@direntekir</span>
+        </a>
     </div>
 
-</div>
+    <!-- ===================== -->
+    <!-- KATEGORİ SİSTEMİ -->
+    <!-- ===================== -->
 
-<h2>Etkinlikler</h2>
-<h3>Bağış Kermesi – 2024</h3>
-<p>Kısa açıklama</p>
-<div class="photo-scroll">
-    <img src="images/events/etkinlik1-1.jpg">
-    <img src="images/events/etkinlik1-2.jpg">
-</div>
+    <div class="layout">
 
-<h2>Tekir'in Bloğu</h2>
-<h3>Sokakta Yaşamak</h3>
-<p>Blog içeriği</p>
-<div class="photo-scroll">
-    <img src="images/blog/blog1-1.jpg">
-    <img src="images/blog/blog1-2.jpg">
-</div>
+        <aside class="sidebar">
+            <button onclick="showSection('himaye')">Himayemizdeki Canlar</button>
+            <button onclick="showSection('yuva')">Yuva Arayan Canlar</button>
+            <button onclick="showSection('kaybettiklerimiz')">Kaybettiklerimiz</button>
+            <button onclick="showSection('etkinlikler')">Etkinlikler</button>
+            <button onclick="showSection('blog')">Tekir'in Bloğu</button>
+        </aside>
 
-<h2>Yuva Arayan Canlar</h2>
-<div class="animal-grid">
-    <div class="card">
-        <div class="photo-scroll">
-            <img src="images/animals/can1-1.jpg">
-            <img src="images/animals/can1-2.jpg">
-        </div>
-        <p>Kısa açıklama</p>
+        <section class="dynamic-content">
+
+            <!-- Himayemizde -->
+            <div id="himaye" class="section hidden">
+                <h2>Himayemizdeki Canlar</h2>
+
+                <div class="animal-grid">
+                    <div class="animal-card">
+                        <div class="slider">
+                            <img src="images/kedi1.jpg">
+                            <img src="images/kedi1_2.jpg">
+                        </div>
+                        <h3>MİNNOŞ</h3>
+                        <p>3 yaşında • kısır • sakin</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yuva Arayan -->
+            <div id="yuva" class="section hidden">
+                <h2>Yuva Arayan Canlar</h2>
+                <div class="animal-grid"></div>
+            </div>
+
+            <!-- Kaybettiklerimiz -->
+            <div id="kaybettiklerimiz" class="section hidden">
+                <h2>Kaybettiklerimiz ama Unutmadıklarımız</h2>
+                <div class="animal-grid"></div>
+            </div>
+
+            <!-- Etkinlikler -->
+            <div id="etkinlikler" class="section hidden">
+                <h2>Etkinlikler</h2>
+
+                <div class="event-menu">
+                    <button onclick="showEvent('etkinlik1')">Mama Bağışı Kampanyası</button>
+                    <button onclick="showEvent('etkinlik2')">Kısırlaştırma Günü</button>
+                </div>
+
+                <div id="etkinlik1" class="event hidden">
+                    <img src="images/event1.jpg">
+                    <p>Etkinlik detayları burada yer alacak.</p>
+                </div>
+
+                <div id="etkinlik2" class="event hidden">
+                    <img src="images/event2.jpg">
+                    <p>Etkinlik detayları burada yer alacak.</p>
+                </div>
+            </div>
+
+            <!-- BLOG -->
+            <div id="blog" class="section hidden">
+                <h2>Tekir'in Bloğu</h2>
+
+                <div class="blog-menu">
+                    <button onclick="showPost('post1')">Ocak Kurtarma Hikayeleri</button>
+                    <button onclick="showPost('post2')">Kış ve Sokak Hayvanları</button>
+                </div>
+
+                <div id="post1" class="post hidden">
+                    <img src="images/blog1.jpg">
+                    <p>Blog yazısı burada yer alacak.</p>
+                </div>
+
+                <div id="post2" class="post hidden">
+                    <img src="images/blog2.jpg">
+                    <p>Blog yazısı burada yer alacak.</p>
+                </div>
+            </div>
+
+        </section>
     </div>
-</div>
 
 </main>
 
-<footer class="footer">
-    © 2026 Diren Tekir Derneği
-</footer>
+<script>
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        alert("Kopyalandı: " + text);
+    });
+}
+
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(s => s.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function showEvent(id) {
+    document.querySelectorAll(".event").forEach(e => e.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function showPost(id) {
+    document.querySelectorAll(".post").forEach(p => p.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+}
+</script>
 
 </body>
 </html>
