@@ -1,57 +1,22 @@
-/* ============================= */
-/* GENEL AYARLAR */
-/* ============================= */
-
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f7f3e8;
-    position: relative;
-    overflow-x: hidden;
 }
 
-/* Arka planda soluk logo */
-body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 700px;
-    height: 700px;
-    background-image: url("images/logo_bg.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.07;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-}
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-/* ============================= */
 /* HEADER */
-/* ============================= */
 
 .header {
     display: flex;
     align-items: center;
     padding: 20px 30px;
+    background: linear-gradient(to bottom, #9FAF72, rgba(159,175,114,0));
+    color: white;
     position: relative;
-    background: linear-gradient(to bottom,
-            #9FAF72 0%,
-            rgba(159, 175, 114, 0.95) 70%,
-            rgba(159, 175, 114, 0) 100%);
-    color: #ffffff;
 }
 
 .logo {
@@ -59,110 +24,84 @@ p {
 }
 
 .title {
-    display: flex;
-    flex-direction: column;
     margin-left: 20px;
-    line-height: 1.1;
 }
 
 .title-top {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .title-bottom {
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
 }
-
-/* HEADER MENÜ */
 
 .header-nav {
     position: absolute;
-    bottom: 8px;
     right: 30px;
-    display: flex;
-    gap: 12px;
+    bottom: 10px;
 }
 
 .header-nav a {
+    margin-left: 10px;
+    text-decoration: none;
     padding: 8px 14px;
     border-radius: 8px;
-    border: 1px solid #cfd8b4;
-    background-color: #f0f3e2;
+    background: #f0f3e2;
     color: #4c5831;
     font-size: 14px;
-    text-decoration: none;
-    transition: 0.25s;
 }
 
 .header-nav a:hover {
-    background-color: #e4eacb;
-    transform: translateY(-2px);
+    background: #e4eacb;
 }
 
-/* ============================= */
 /* CONTENT */
-/* ============================= */
 
 .content {
     padding: 30px;
-    max-width: 1100px;
+    max-width: 900px;
     margin: auto;
 }
 
-h2 {
-    color: #3f2f1b;
-}
-
-/* ============================= */
-/* BUTONLAR */
-/* ============================= */
-
-.copy-buttons {
-    margin-top: 20px;
-}
+/* BUTTON */
 
 .copy-btn {
     padding: 10px 18px;
     border-radius: 8px;
     border: 1px solid #cfd8b4;
-    background-color: white;
-    color: #4c5831;
+    background: white;
     cursor: pointer;
-    transition: 0.25s;
 }
 
-.copy-btn:hover {
-    background-color: #e4eacb;
-}
-
-/* ============================= */
-/* İLETİŞİM */
-/* ============================= */
+/* CONTACT */
 
 .contact-item {
-    display: inline-block;
-    padding: 10px 14px;
-    background-color: white;
-    border-radius: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e1e6cf;
     text-decoration: none;
     color: #4c5831;
-    border: 1px solid #e1e6cf;
-    margin-bottom: 10px;
 }
 
-/* ============================= */
-/* KATEGORİ LAYOUT */
-/* ============================= */
+/* SAYFA GEÇİŞ */
+
+.page {
+    display: none;
+    padding: 30px;
+}
+
+/* LAYOUT */
 
 .layout {
     display: flex;
     gap: 30px;
-    margin-top: 40px;
+    max-width: 1100px;
+    margin: auto;
 }
 
-/* SOL MENÜ */
+/* SIDEBAR */
 
 .sidebar {
     min-width: 220px;
@@ -180,97 +119,31 @@ h2 {
     text-align: left;
     font-weight: 600;
     color: #4c5831;
-    transition: 0.25s;
 }
 
 .sidebar button:hover {
     background: #e4eacb;
 }
 
-/* içerik alanı */
+/* SECTION */
 
 .dynamic-content {
     flex: 1;
 }
 
-.hidden {
+.section {
     display: none;
 }
 
-/* ============================= */
-/* HAYVAN KARTLARI */
-/* ============================= */
-
-.animal-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+.section h2 {
+    margin-top: 0;
 }
 
-.animal-card {
-    background: white;
-    border-radius: 12px;
-    padding: 10px;
-    text-align: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-.slider {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 6px;
-}
-
-.slider img {
-    min-width: 100%;
-    scroll-snap-align: start;
-    border-radius: 10px;
-}
-
-.animal-card h3 {
-    margin: 8px 0 2px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.animal-card p {
-    font-size: 14px;
-}
-
-/* ============================= */
-/* ETKİNLİK & BLOG */
-/* ============================= */
-
-.event-menu button,
-.blog-menu button {
-    margin: 6px 6px 12px 0;
-    padding: 8px 14px;
-    border-radius: 8px;
-    border: 1px solid #cfd8b4;
-    background: #f0f3e2;
-    cursor: pointer;
-}
-
-.event img,
-.post img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-/* ============================= */
-/* MOBİL UYUMLULUK */
-/* ============================= */
+/* MOBILE */
 
 @media (max-width: 900px) {
-
     .layout {
         flex-direction: column;
-    }
-
-    .animal-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .header {
@@ -281,9 +154,5 @@ h2 {
     .header-nav {
         position: static;
         margin-top: 10px;
-    }
-
-    .logo {
-        width: 70px;
     }
 }
