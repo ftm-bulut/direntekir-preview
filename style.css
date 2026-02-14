@@ -1,129 +1,289 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3e8;
-    color: #2f2f2f;
+/* ============================= */
+/* GENEL AYARLAR */
+/* ============================= */
+
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f3e8;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Arka planda soluk logo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background-image: url("images/logo_bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.07;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* ============================= */
 /* HEADER */
+/* ============================= */
 
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    background: linear-gradient(90deg, #9FAF72, #87965f);
-    color: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
-
-.header-left {
-    display: flex;
-    align-items: center;
+    padding: 20px 30px;
+    position: relative;
+    background: linear-gradient(to bottom,
+            #9FAF72 0%,
+            rgba(159, 175, 114, 0.95) 70%,
+            rgba(159, 175, 114, 0) 100%);
+    color: #ffffff;
 }
 
 .logo {
-    width: 70px;
+    width: 80px;
 }
 
 .title {
-    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    line-height: 1.1;
 }
 
 .title-top {
-    display: block;
-    font-size: 26px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 700;
 }
 
 .title-bottom {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* HEADER MENÜ */
+
+.header-nav {
+    position: absolute;
+    bottom: 8px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+}
+
+.header-nav a {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background-color: #f0f3e2;
+    color: #4c5831;
     font-size: 14px;
-    opacity: 0.9;
-}
-
-/* NAVIGATION */
-
-.nav a {
-    color: white;
     text-decoration: none;
-    margin-left: 18px;
-    font-weight: bold;
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
-.nav a:hover {
-    opacity: 0.7;
+.header-nav a:hover {
+    background-color: #e4eacb;
+    transform: translateY(-2px);
 }
 
+/* ============================= */
 /* CONTENT */
+/* ============================= */
 
 .content {
-    max-width: 900px;
+    padding: 30px;
+    max-width: 1100px;
     margin: auto;
-    padding: 25px;
 }
 
 h2 {
     color: #3f2f1b;
-    margin-top: 45px;
-    border-left: 6px solid #9FAF72;
-    padding-left: 10px;
 }
 
-/* GRIDS */
+/* ============================= */
+/* BUTONLAR */
+/* ============================= */
 
-.team-grid,
-.animal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
+.copy-buttons {
+    margin-top: 20px;
 }
 
-/* CARDS */
-
-.card {
-    background: white;
-    padding: 12px;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+.copy-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background-color: white;
+    color: #4c5831;
+    cursor: pointer;
     transition: 0.25s;
 }
 
-.card:hover {
-    transform: translateY(-4px);
+.copy-btn:hover {
+    background-color: #e4eacb;
 }
 
-/* IMAGES */
+/* ============================= */
+/* İLETİŞİM */
+/* ============================= */
 
-.card img {
-    width: 100%;
+.contact-item {
+    display: inline-block;
+    padding: 10px 14px;
+    background-color: white;
     border-radius: 10px;
+    text-decoration: none;
+    color: #4c5831;
+    border: 1px solid #e1e6cf;
+    margin-bottom: 10px;
 }
 
-.photo-scroll {
+/* ============================= */
+/* KATEGORİ LAYOUT */
+/* ============================= */
+
+.layout {
     display: flex;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* SOL MENÜ */
+
+.sidebar {
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
-    overflow-x: auto;
-    margin-top: 10px;
-    padding-bottom: 5px;
 }
 
-.photo-scroll img {
-    height: 160px;
-    border-radius: 10px;
-    transition: 0.3s;
+.sidebar button {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background: #f0f3e2;
+    cursor: pointer;
+    text-align: left;
+    font-weight: 600;
+    color: #4c5831;
+    transition: 0.25s;
 }
 
-.photo-scroll img:hover {
-    transform: scale(1.05);
+.sidebar button:hover {
+    background: #e4eacb;
 }
 
-/* FOOTER */
+/* içerik alanı */
 
-.footer {
+.dynamic-content {
+    flex: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ============================= */
+/* HAYVAN KARTLARI */
+/* ============================= */
+
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.animal-card {
+    background: white;
+    border-radius: 12px;
+    padding: 10px;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    background: #e5dfcf;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 6px;
+}
+
+.slider img {
+    min-width: 100%;
+    scroll-snap-align: start;
+    border-radius: 10px;
+}
+
+.animal-card h3 {
+    margin: 8px 0 2px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.animal-card p {
     font-size: 14px;
+}
+
+/* ============================= */
+/* ETKİNLİK & BLOG */
+/* ============================= */
+
+.event-menu button,
+.blog-menu button {
+    margin: 6px 6px 12px 0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid #cfd8b4;
+    background: #f0f3e2;
+    cursor: pointer;
+}
+
+.event img,
+.post img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* ============================= */
+/* MOBİL UYUMLULUK */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    .animal-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-nav {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .logo {
+        width: 70px;
+    }
 }
