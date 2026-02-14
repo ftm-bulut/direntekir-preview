@@ -2,34 +2,75 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f7f3e8;
+    color: #2f2f2f;
 }
+
+/* HEADER */
 
 .header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: #9FAF72;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #9FAF72, #87965f);
     color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-    width: 80px;
+    width: 70px;
 }
 
 .title {
-    margin-left: 15px;
+    margin-left: 12px;
 }
+
+.title-top {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.title-bottom {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* NAVIGATION */
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    opacity: 0.7;
+}
+
+/* CONTENT */
 
 .content {
     max-width: 900px;
     margin: auto;
-    padding: 20px;
+    padding: 25px;
 }
 
 h2 {
     color: #3f2f1b;
-    margin-top: 40px;
+    margin-top: 45px;
+    border-left: 6px solid #9FAF72;
+    padding-left: 10px;
 }
+
+/* GRIDS */
 
 .team-grid,
 .animal-grid {
@@ -38,11 +79,21 @@ h2 {
     gap: 20px;
 }
 
+/* CARDS */
+
 .card {
     background: white;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.25s;
 }
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* IMAGES */
 
 .card img {
     width: 100%;
@@ -54,9 +105,25 @@ h2 {
     gap: 10px;
     overflow-x: auto;
     margin-top: 10px;
+    padding-bottom: 5px;
 }
 
 .photo-scroll img {
     height: 160px;
     border-radius: 10px;
+    transition: 0.3s;
+}
+
+.photo-scroll img:hover {
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background: #e5dfcf;
+    font-size: 14px;
 }
