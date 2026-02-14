@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3e8;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #9FAF72;
+    color: white;
+}
+
+.logo {
+    width: 80px;
+}
+
+.title {
+    margin-left: 15px;
+}
+
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #3f2f1b;
+    margin-top: 40px;
+}
+
+.team-grid,
+.animal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.photo-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.photo-scroll img {
+    height: 160px;
+    border-radius: 10px;
+}
